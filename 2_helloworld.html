@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css/1_helloworld.css" type="text/css">
+</head>
+<body>
+    <div id="cpx">
+        <div>
+            <p class="preto">hello world!</p>
+        </div>
+    </div>
+    <button id="color">colorido</button>
+    <script>
+        obj = document.getElementById("cpx")
+        botao = document.getElementById("color")
+
+        
+        function trocaCor(){
+            obj.style.backgroundColor="black"
+        }
+        function corPadrao(){
+            obj.style.backgroundColor="red"
+        }
+
+        function colorido(){
+            var r = Math.floor(Math.random()*255)//floor para numeros inteiros
+            var g = Math.floor(Math.random()*255)
+            var b = Math.floor(Math.random()*255)
+            obj.style.backgroundColor="rgb("+r+","+g+","+b+")"
+        }
+
+        function addEvents(){
+            obj.addEventListener("mouseover", trocaCor)
+            obj.addEventListener("mouseout", corPadrao)
+            botao.addEventListener("click", colorido)
+        }
+        window.addEventListener("load", addEvents)
+    </script>
+</body>
+</html>
